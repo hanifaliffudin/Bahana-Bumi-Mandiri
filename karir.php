@@ -284,71 +284,64 @@
 
       <!-- BEGIN MAIN CONTENT -->
       <div id="main-content">
+        <?php
+            include "dbconnect.php";
+
+            $sql = $db->prepare("SELECT * FROM karir");
+            $sql->execute(); // Eksekusi querynya
+  
+            $sql->bindColumn('id', $id);
+            $sql->bindColumn('name', $name);
+            $sql->bindColumn('responsibilities', $responsibilities);
+            $sql->bindColumn('requirements', $requirements);
+            $sql->bindColumn('notes', $notes);
+            $res = $sql->fetchAll();
+
+        ?>
         <!-- BEGIN SHORTCODES -->
         <section class="section animated" data-animation="fadeIn">
           <div class="container">
             <div class="row">
+
               <div class="col-md-12">
                 <div class="tab-left tab-buttons m-b-60">
                   <ul class="nav nav-tabs">
+                    <?php
+                    // while ($row = $sql->fetch(PDO::FETCH_BOUND)) {
+                        foreach ($res as $row) {
+                    ?> 
                     <li class="nav-item">
-                      <a class="active" href="#tab3-1" data-toggle="tab">
+                      <a class="<?php if ($row['id']==1) echo 'active' ?>" href="#tab3-<?php echo $row['id']; ?>" data-toggle="tab">
                         <div class="container">
                           <div class="row">
-                            <div class="col">Accounting & Tax Staff</div>
+                            <div class="col"><?php echo $row['name'] ?></div>
                           </div>
                         </div></a
                       >
                     </li>
+                    <?php } ?>
                   </ul>
                   <div class="tab-content">
-                    <div class="tab-pane fade active in" id="tab3-1">
-                      <h3 class="m-t-0">Accounting & Tax Staff</h3>
-                      <!-- <div
-                        class="map f-right"
-                        id="map-right-3"
-                        data-map-width="330"
-                        data-plugin-options='{"zoom":12,"lat":51.5085300,"lng":-0.1257400,"panControl":false,"mapTypeControl":false}'
-                      ></div> -->
+                  <?php
+                    // while ($row = $sql->fetch(PDO::FETCH_BOUND)) {
+                        foreach ($res as $row) {
+                    ?>
+                    <div class="tab-pane fade <?php if ($row['id']==1) echo 'active' ?> in" id="tab3-<?php echo $row['id']; ?>">
+                      <h3 class="m-t-0"><?php echo $row['name'] ?></h3>
+                    
                       <h4>RESPONSIBILITIES</h4>
                       <ul>
-                        <li>Preparing financial statements</li>
-                        <li>Preparing financial transactions</li>
-                        <li>Bank reconcile</li>
-                        <li>
-                          Preparing tax report of PPh 21, PPh 23, PPh 29, PP 23,
-                          PPN, adn PPh article 4 section 2
-                        </li>
-                        <li>
-                          Liaising with internal and external parties related to
-                          financial activites
-                        </li>
-                        <li>Assisting in financial audit process</li>
-                        <li>Document checking</li>
-                        <li>Billing and collection</li>
+                        <?php echo $row['responsibilities'] ?>
                       </ul>
                       <h4>REQUIREMENTS</h4>
                       <ul>
-                        <li>A bachelor in Accounting</li>
-                        <li>Preferable certified in Brevet A and B</li>
-                        <li>
-                          Having experience in related fields for minimum 2
-                          years
-                        </li>
-                        <li>
-                          Having ability to operate accounting and tax
-                          application system
-                        </li>
+                        <?php echo $row['requirements'] ?>
                       </ul>
                       <div class="">
-                        To apply, please send your CV to
-                        <a href="mailto:recruitment@bombagrup.com"
-                          >recruitment@bombagrup.com</a
-                        >
-                        <br />
-                        (subject: Accounting - [name])
+                        <?php echo $row['notes'] ?>
                       </div>
                     </div>
+                    <?php } ?>
                   </div>
                 </div>
               </div>
@@ -469,7 +462,7 @@
     <script src="assets/js/libs/easyticker-jquery/jquery.easy-ticker.min.js"></script>
 
     <!-- BEGIN PAGE SCRIPT -->
-
+    
     <script src="assets/js/plugins/revolution-slider/revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
     <script src="assets/js/plugins/revolution-slider/revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
     <script src="assets/js/map.js"></script>
