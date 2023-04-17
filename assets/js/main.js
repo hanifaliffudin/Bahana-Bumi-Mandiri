@@ -297,8 +297,8 @@ function faqCategories() {
 // SCROLL EASING EFFECT
 function scrollEasing() {
   if (!isFirefox) {
-    var scrollTime = 0.4; //Scroll time
-    var scrollDistance = 600; //Distance. Use smaller value for shorter scroll and greater value for longer scroll
+    var scrollTime = 0.2; //Scroll time
+    var scrollDistance = 60; //Distance. Use smaller value for shorter scroll and greater value for longer scroll
     if ($("body").hasClass("left-nav") || $("body").hasClass("right-nav")) {
       $("#main-content").on("mousewheel DOMMouseScroll", function (event) {
         event.preventDefault();
@@ -318,6 +318,12 @@ function scrollEasing() {
         });
       });
     } else {
+      // if (
+      //   $("body").hasClass("normal-scroll") ||
+      //   parseInt($(window).width()) < 768
+      // ) {
+      //   scrollDistance = 80;
+      // }
       if (body.hasClass("boxed")) {
         body.on("mousewheel DOMMouseScroll", function (event) {
           event.preventDefault();

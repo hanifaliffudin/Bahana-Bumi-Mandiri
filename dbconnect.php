@@ -2,11 +2,11 @@
 
 $db_host = "localhost";
 $db_user = "root";
-// $db_user = "digiprim_insight";
+// $db_user = "u8766973_bbm";
 $db_pass = "";
-// $db_pass = "2a6nJCa;GcnM";
+// $db_pass = "bbm@BombaGrup2021";
 $db_name = "bbm";
-// $db_name = "digiprim_insight";
+// $db_name = "u8766973_bbm";
 
 try {    
     //create PDO connection 

@@ -24,7 +24,7 @@ FOOTERS
   min-height: 0;
 }
 #footer p {
-  color: #888888;
+  /* color: #888888; */
   font-size: 0.9rem;
 }
 #footer .footer-logo {

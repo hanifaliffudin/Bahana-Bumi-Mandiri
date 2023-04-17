@@ -48,7 +48,7 @@ figure h4,
 figure p {
   margin-top: 0;
   font-weight: 300;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0);
   -webkit-transition: -webkit-transform 0.35s;
   -moz-transform: transform 0.35s;
   -ms-transform: transform 0.35s;
@@ -212,6 +212,8 @@ figure.he-1 p {
 }
 figure.he-1 h4 {
   position: absolute;
+  background-color: rgba(0, 0, 0, 0.637);
+  padding: 2px 10px;
 }
 figure.he-1.title-center h1,
 figure.he-1.title-center h2,
@@ -334,23 +336,24 @@ figure.he-2 a:hover {
   color: #e2785d;
 }
 figure.he-2:hover img {
-  opacity: 0.8;
-  -webkit-transform: translateY(-2rem);
+  /* opacity: 0.8; */
+  /* -webkit-transform: translateY(-2rem);
   -moz-transform: translateY(-2rem);
   -ms-transform: translateY(-2rem);
-  transform: translateY(-2rem);
+  transform: translateY(-2rem); */
 }
 figure.he-2 figcaption {
   top: auto;
   bottom: 0;
   padding: 0.5em;
   height: 10.5em;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.78);
   color: #3c4a50;
-  -webkit-transition: -webkit-transform 0.35s;
+
+  /* -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
   -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0); */
 }
 figure.he-2 h3,
 figure.he-2 h4 {
